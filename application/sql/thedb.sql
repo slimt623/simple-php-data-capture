@@ -169,7 +169,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'admin', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'test@gmail.com', '', 'WZCeygZIauj6SNMTW30l7e840681826df604b1af', 1510134728, NULL, 1268889823, 1510139914, 1, 'Admin', 'istrator', 'ADMIN', '0'),
+(1, '127.0.0.1', 'admin', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', 'WZCeygZIauj6SNMTW30l7e840681826df604b1af', 1510134728, NULL, 1268889823, 1510139914, 1, 'Admin', 'istrator', 'ADMIN', '0'),
 (4, '197.155.231.62', 'admin@mail.com', '$2y$08$ezxjSlqCXGyZc3RMLh7yG.96NTr3NPXQR.L/SXSQ1rrCoiVDbRzQC', NULL, 'admin@mail.com', NULL, 'yDwX.5he2wGaSspr.Dc7j.418abc9d80c65fd737', 1495038196, 'ptL4ozdMlb/zNnW19TMBXu', 1492010638, 1510124119, 1, 'Admin', 'User', 'Company', '00263');
 
 -- --------------------------------------------------------
