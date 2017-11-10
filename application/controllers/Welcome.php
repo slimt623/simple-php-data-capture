@@ -28,7 +28,7 @@ class Welcome extends CI_Controller
         $this->load->database();
         $this->load->helper('url');
         $this->load->database();
-        $this->load->library(array('ion_auth', 'form_validation'));
+        $this->load->library(array('ion_auth', 'form_validation','unit_test'));
 /* ------------------ */
 
         $this->load->library('grocery_CRUD');
@@ -55,6 +55,7 @@ class Welcome extends CI_Controller
         //array('1' => 'active', '2' => 'private','3' => 'spam' , '4' => 'deleted'));
         $output = $crud->render();
 
+
         $this->_example_output($output);
 
     }
@@ -67,7 +68,7 @@ class Welcome extends CI_Controller
             redirect('auth/login', 'refresh');
         }
         $crud = new grocery_CRUD();
-
+         echo  $this->unit->run($crud , 'is_string','forth failed unit test , failed by design');
         $crud->set_theme('datatables');
         $crud->set_table('opinion');
         // $crud->set_relation('location', 'locations', 'loc_name');
@@ -79,8 +80,10 @@ class Welcome extends CI_Controller
         //$crud->field_type('locations','dropdown',
         //array('1' => 'active', '2' => 'private','3' => 'spam' , '4' => 'deleted'));
         $output = $crud->render();
-
+      
         $this->_example_output($output);
+        echo  $this->unit->run($output, 'is_object','first unit test');
+        
     }
 
     public function agent()
@@ -98,6 +101,7 @@ class Welcome extends CI_Controller
         $output = $crud->render();
 
         $this->_example_output($output);
+         echo  $this->unit->run($output, 'is_object','second unit test');
     }
     public function subject()
     {
@@ -108,6 +112,7 @@ class Welcome extends CI_Controller
         }
         $crud = new grocery_CRUD();
 
+
         $crud->set_theme('datatables');
         $crud->set_table('subject');
 
@@ -115,6 +120,7 @@ class Welcome extends CI_Controller
         $output = $crud->render();
 
         $this->_example_output($output);
+         echo  $this->unit->run($output, 'is_object','third unit test');
     }
 
     public function _example_output($output = null)
